@@ -1,9 +1,13 @@
 var React = require('react');
 
+var Popular = require('./popular');
+
 class App extends React.Component {
 	render() {
 		return(
-			<div>Hello World!</div>
+			<div className='container'>
+				<Popular />
+			</div>
 		)
 	}
 }
