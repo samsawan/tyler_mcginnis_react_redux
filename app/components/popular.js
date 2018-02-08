@@ -35,12 +35,7 @@ class Popular extends React.Component {
 	}
 
 	componentDidMount() {
-		// api.fetchPopularRepos(this.state.selectedLanguage)
-		// .then(function(repos) {
-		// 	console.log(repos)
-		// });
 		this.updateLanguage(this.state.selectedLanguage)
-
 	}
 
 	updateLanguage(newLanguage) {
@@ -53,8 +48,12 @@ class Popular extends React.Component {
 
 		api.fetchPopularRepos(newLanguage)
 		.then(function(repos) {
-			console.log(repos)
-		});
+			this.setState(function() {
+				return {
+					repos: repos
+				}
+			})
+		}.bind(this));
 	}
 
 	render() {
@@ -64,6 +63,7 @@ class Popular extends React.Component {
 					selectedLanguage={this.state.selectedLanguage}
 					updateLanguage={this.updateLanguage}
 				/>
+				{JSON.stringify(this.state.repos, null, 2)}
 			</div>
 		)
 	}
