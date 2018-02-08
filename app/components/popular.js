@@ -2,7 +2,7 @@ var React = require('react');
 var api = require('../utils/api');
 
 function SelectLanguage(props) {
-	var languages = ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python'];
+	var languages = ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python', 'Erlang'];
 
 	return (
 		<ul className='languages'>
