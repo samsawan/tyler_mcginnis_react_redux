@@ -81,7 +81,7 @@ class Popular extends React.Component {
 			})
 		}.bind(this));
 	}
-
+// HW: make the loading thing like a loading animation
 	render() {
 		return (
 			<div>
